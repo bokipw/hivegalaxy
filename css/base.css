@@ -1,0 +1,31 @@
+/* ============================================================
+   HIVE GALAXY — css/base.css
+   CSS varijable, reset, fontovi
+   ============================================================ */
+
+:root {
+  --bg:      #03050e;
+  --bg2:     #070c1a;
+  --bg3:     #0c1428;
+  --cyan:    #00d4ff;
+  --cyan2:   #0099cc;
+  --gold:    #ffcc44;
+  --red:     #ff3355;
+  --green:   #00ff88;
+  --purple:  #aa44ff;
+  --orange:  #ff8833;
+  --border:  rgba(0,212,255,0.15);
+  --border2: rgba(0,212,255,0.3);
+  --text:    #b0cce8;
+  --text2:   #6a90b8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--text);
+}
