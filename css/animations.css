@@ -1,0 +1,103 @@
+/* ============================================================
+   HIVE GALAXY — css/animations.css
+   Animacije i tranzicije
+   ============================================================ */
+
+/* ── TOAST ── */
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes toastOut {
+  to { opacity: 0; transform: translateX(20px); }
+}
+
+.toast-msg {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--text);
+  animation: toastIn 0.2s ease, toastOut 0.3s ease 2.7s forwards;
+  min-width: 220px;
+}
+
+.toast-ok   { border-color: rgba(0,255,136,0.4);  color: var(--green); }
+.toast-err  { border-color: rgba(255,51,85,0.4);   color: var(--red);   }
+.toast-warn { border-color: rgba(255,204,68,0.4);  color: var(--gold);  }
+.toast-inf  { border-color: rgba(0,212,255,0.4);   color: var(--cyan);  }
+
+/* ── PANEL TRANSITION ── */
+.panel {
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── CARD PULSE (kad se doda item) ── */
+@keyframes cardPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(0,212,255,0.4); }
+  70%  { box-shadow: 0 0 0 8px rgba(0,212,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,212,255,0); }
+}
+
+.card-pulse { animation: cardPulse 0.6s ease; }
+
+/* ── VICTORY GLOW ── */
+@keyframes victoryGlow {
+  0%, 100% { text-shadow: 0 0 10px rgba(0,255,136,0.5); }
+  50%       { text-shadow: 0 0 30px rgba(0,255,136,0.9); }
+}
+
+.victory-text { animation: victoryGlow 1.5s ease infinite; }
+
+/* ── DEFEAT SHAKE ── */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+.shake { animation: shake 0.4s ease; }
+
+/* ── SPIN (loading) ── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.spin { animation: spin 1s linear infinite; }
+
+/* ── BLINK (upozorenje) ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.blink { animation: blink 1s ease infinite; }
+
+/* ── PBAR SHIMMER ── */
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to   { background-position: 200% center; }
+}
+
+.pbar-fill-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--cyan2) 0%,
+    var(--cyan)  50%,
+    var(--cyan2) 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+}
